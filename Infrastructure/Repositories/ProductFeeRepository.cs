@@ -9,50 +9,49 @@ using WebAPI;
 
 namespace Infrastructure.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductFeeRepository : IProductFeeRepository
     {
         private readonly CMMDBContext _context;
         private readonly IMapper _mapper;
-        public ProductRepository(CMMDBContext context, IMapper mapper)
+        public ProductFeeRepository(CMMDBContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
-        public async Task<PaginatedList<CmmProduct, ProductDTO>> GetProductList(int page = 1, string search = "")
+        public async Task<PaginatedList<CmmProductFee, ProductFeeDTO>> GetProductFeeList(int page = 1, string search = "")
         {
-            IQueryable<CmmProduct> list = _context.CmmProducts
+            IQueryable<CmmProductFee> list = _context.CmmProductFees
                                         .Where(x => string.IsNullOrEmpty(search) ||
-                                                    x.ProductCode.Contains(search) ||
-                                                    x.ProductName.Contains(search))
-                                        .OrderBy(x => x.ProductCode);
-            return await PaginatedList<CmmProduct, ProductDTO>.CreateAsync(list, _mapper, page);
+                                                    x.FeeName.Contains(search) ||
+                                                    x.FeeAmount.Contains(search))
+                                        .OrderBy(x => x.FeeName);
+            return await PaginatedList<CmmProductFee, ProductFeeDTO>.CreateAsync(list, _mapper, page);
         }
-        public async Task<List<CmmProduct>> GetProductList()
+        public async Task<List<CmmProductFee>> GetProductFeeList()
         {
-            return await _context.CmmProducts.ToListAsync();
+            return await _context.CmmProductFees.ToListAsync();
         }
-        public async Task<CmmProduct> GetProduct(string ProductCode)
+        public async Task<CmmProductFee> GetProductFee(int ProductAdbId, string FeeName)
         {
-            return await _context.CmmProducts.Where(x => x.ProductCode == ProductCode).FirstOrDefaultAsync() ?? new();
+            return await _context.CmmProductFees.Where(x => x.FeeName == FeeName && x.ProductAdbId == ProductAdbId).FirstOrDefaultAsync() ?? new();
         }
-        public async Task<CmmProduct> GetProduct(int ProductId)
+        public async Task<CmmProductFee> GetProductFee(int FeeId)
         {
-            return await _context.CmmProducts.FindAsync(ProductId) ?? new();
+            return await _context.CmmProductFees.FindAsync(FeeId) ?? new();
         }
-        public async Task<ReturnStatus> Update(CmmProduct product)
+        public async Task<ReturnStatus> Update(CmmProductFee ProductFee)
         {
             ReturnStatus result = new();
             try
             {
-                var existing = await _context.CmmProducts.FindAsync(product.ProductId);
+                var existing = await _context.CmmProductFees.FindAsync(ProductFee.FeeId);
                 if (existing == null)
                 {
                     result.Message = "No data found";
                     return result;
                 }
 
-                _mapper.Map(product, existing);
-                existing.DateCreated = DateTime.Now;
+                _mapper.Map(ProductFee, existing);
                 _context.Entry(existing).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 result.Success = true;
@@ -65,12 +64,12 @@ namespace Infrastructure.Repositories
 
             return result;
         }
-        public async Task<ReturnStatus> Add(CmmProduct product)
+        public async Task<ReturnStatus> Add(CmmProductFee ProductFee)
         {
             ReturnStatus result = new();
             try
             {
-                _context.CmmProducts.Add(product);
+                _context.CmmProductFees.Add(ProductFee);
                 await _context.SaveChangesAsync();
                 result.Success = true;
                 result.Message = "Successfull! Data was successfully added";
@@ -81,15 +80,15 @@ namespace Infrastructure.Repositories
             }
             return result;
         }
-        public async Task<ReturnStatus> Delete(int ProductId)
+        public async Task<ReturnStatus> Delete(int FeeId)
         {
             ReturnStatus result = new() { Message = "No data found" };
             try
             {
-                var user = await _context.CmmProducts.FindAsync(ProductId);
+                var user = await _context.CmmProductFees.FindAsync(FeeId);
                 if (user != null)
                 {
-                    _context.CmmProducts.Remove(user);
+                    _context.CmmProductFees.Remove(user);
                     await _context.SaveChangesAsync();
                     result.Success = true;
                     result.Message = "Successfull! Data was successfully deleted";

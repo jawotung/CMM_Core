@@ -11,7 +11,7 @@ public partial class CmmProductFee
 
     public int FeeId { get; set; }
 
-    public string? FeeName { get; set; }
+    public string FeeName { get; set; } = "";
 
-    public string? FeeAmount { get; set; }
+    public string FeeAmount { get; set; } = "";
 }

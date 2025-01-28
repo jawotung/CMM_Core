@@ -50,7 +50,7 @@ namespace Application.Services
                     var existing = await _repo.GetArea(area.AreaId);
                     if (existing.AreaId == 0)
                     {
-                        result.Message = "No daa found";
+                        result.Message = "No data found";
                         return result;
                     }
                     result = await _repo.Update(data);

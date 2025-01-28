@@ -9,50 +9,49 @@ using WebAPI;
 
 namespace Infrastructure.Repositories
 {
-    public class ProductRepository : IProductRepository
+    public class ProductAdbRepository : IProductAdbRepository
     {
         private readonly CMMDBContext _context;
         private readonly IMapper _mapper;
-        public ProductRepository(CMMDBContext context, IMapper mapper)
+        public ProductAdbRepository(CMMDBContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
-        public async Task<PaginatedList<CmmProduct, ProductDTO>> GetProductList(int page = 1, string search = "")
+        public async Task<PaginatedList<CmmProductAdb, ProductAdbDTO>> GetProductAdbList(int page = 1, string search = "")
         {
-            IQueryable<CmmProduct> list = _context.CmmProducts
+            IQueryable<CmmProductAdb> list = _context.CmmProductAdbs
                                         .Where(x => string.IsNullOrEmpty(search) ||
-                                                    x.ProductCode.Contains(search) ||
-                                                    x.ProductName.Contains(search))
-                                        .OrderBy(x => x.ProductCode);
-            return await PaginatedList<CmmProduct, ProductDTO>.CreateAsync(list, _mapper, page);
+                                                    x.AdbName.Contains(search) ||
+                                                    x.AdbAmount.Contains(search))
+                                        .OrderBy(x => x.AdbName);
+            return await PaginatedList<CmmProductAdb, ProductAdbDTO>.CreateAsync(list, _mapper, page);
         }
-        public async Task<List<CmmProduct>> GetProductList()
+        public async Task<List<CmmProductAdb>> GetProductAdbList()
         {
-            return await _context.CmmProducts.ToListAsync();
+            return await _context.CmmProductAdbs.ToListAsync();
         }
-        public async Task<CmmProduct> GetProduct(string ProductCode)
+        public async Task<CmmProductAdb> GetProductAdb(int ProductId, string AdbName)
         {
-            return await _context.CmmProducts.Where(x => x.ProductCode == ProductCode).FirstOrDefaultAsync() ?? new();
+            return await _context.CmmProductAdbs.Where(x => x.AdbName == AdbName && x.ProductId == ProductId).FirstOrDefaultAsync() ?? new();
         }
-        public async Task<CmmProduct> GetProduct(int ProductId)
+        public async Task<CmmProductAdb> GetProductAdb(int ProductAdbId)
         {
-            return await _context.CmmProducts.FindAsync(ProductId) ?? new();
+            return await _context.CmmProductAdbs.FindAsync(ProductAdbId) ?? new();
         }
-        public async Task<ReturnStatus> Update(CmmProduct product)
+        public async Task<ReturnStatus> Update(CmmProductAdb productAdb)
         {
             ReturnStatus result = new();
             try
             {
-                var existing = await _context.CmmProducts.FindAsync(product.ProductId);
+                var existing = await _context.CmmProductAdbs.FindAsync(productAdb.ProductAdbId);
                 if (existing == null)
                 {
                     result.Message = "No data found";
                     return result;
                 }
 
-                _mapper.Map(product, existing);
-                existing.DateCreated = DateTime.Now;
+                _mapper.Map(productAdb, existing);
                 _context.Entry(existing).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 result.Success = true;
@@ -65,12 +64,12 @@ namespace Infrastructure.Repositories
 
             return result;
         }
-        public async Task<ReturnStatus> Add(CmmProduct product)
+        public async Task<ReturnStatus> Add(CmmProductAdb productAdb)
         {
             ReturnStatus result = new();
             try
             {
-                _context.CmmProducts.Add(product);
+                _context.CmmProductAdbs.Add(productAdb);
                 await _context.SaveChangesAsync();
                 result.Success = true;
                 result.Message = "Successfull! Data was successfully added";
@@ -81,15 +80,15 @@ namespace Infrastructure.Repositories
             }
             return result;
         }
-        public async Task<ReturnStatus> Delete(int ProductId)
+        public async Task<ReturnStatus> Delete(int ProductAdbId)
         {
             ReturnStatus result = new() { Message = "No data found" };
             try
             {
-                var user = await _context.CmmProducts.FindAsync(ProductId);
+                var user = await _context.CmmProductAdbs.FindAsync(ProductAdbId);
                 if (user != null)
                 {
-                    _context.CmmProducts.Remove(user);
+                    _context.CmmProductAdbs.Remove(user);
                     await _context.SaveChangesAsync();
                     result.Success = true;
                     result.Message = "Successfull! Data was successfully deleted";

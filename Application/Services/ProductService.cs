@@ -50,7 +50,7 @@ namespace Application.Services
                     var existing = await _repo.GetProduct(Product.ProductId);
                     if (existing.ProductId == 0)
                     {
-                        result.Message = "No daa found";
+                        result.Message = "No data found";
                         return result;
                     }
                     result = await _repo.Update(data);

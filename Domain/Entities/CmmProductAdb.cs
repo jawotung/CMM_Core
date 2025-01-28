@@ -9,7 +9,7 @@ public partial class CmmProductAdb
 
     public int ProductId { get; set; }
 
-    public string? AdbName { get; set; }
+    public string AdbName { get; set; } = "";
 
-    public string? AdbAmount { get; set; }
+    public string AdbAmount { get; set; } = "";
 }

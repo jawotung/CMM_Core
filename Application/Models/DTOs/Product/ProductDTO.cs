@@ -8,9 +8,13 @@ public class ProductDTO
 {
     public int ProductId { get; set; }
 
-    public string? ProductCode { get; set; }
+    [Required(ErrorMessage = "Product Code is required.")]
+    [MaxLength(5, ErrorMessage = "Product Code cannot exceed 5 characters.")]
+    public string? ProductCode { get; set; } // Maps to varchar(5)
 
-    public string? ProductName { get; set; }
+    [Required(ErrorMessage = "Product Name is required.")]
+    [MaxLength(75, ErrorMessage = "Product Name cannot exceed 75 characters.")]
+    public string? ProductName { get; set; } // Maps to varchar(75)
 
     public string? Description { get; set; }
 
