@@ -9310,11 +9310,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\WebAPI\\WebAPI.csproj",
+      "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\astung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\WebAPI\\obj\\",
+      "outputPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -9334,14 +9334,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\Application.csproj"
+            "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\Application.csproj"
             },
-            "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj"
+            "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj"
             },
-            "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }

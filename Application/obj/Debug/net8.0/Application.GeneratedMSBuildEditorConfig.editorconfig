@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Application
-build_property.ProjectDir = C:\Users\astung\Documents\My Docs\Source Code\exam\CCM\Application\
+build_property.ProjectDir = C:\Users\astung\Desktop\CBS Project\Converter\CMM_Core\CMM_Core\Application\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

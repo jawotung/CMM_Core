@@ -4011,11 +4011,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\astung\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

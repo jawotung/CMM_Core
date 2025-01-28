@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Chs/KzXF1219GqN5W50DJRFiuBl46CWMuRxNfUnoRcAcDG1dkbaLASsjdOr67D/Pr4F54AzcEy8qXwEfEcaftQ==",
+  "dgSpecHash": "ngwXh1SSquB/tpmM91wtZBWet1cft3uofs2aldR9PDnV0I8HAUaBmIBsHONZXjTTPWLkn537lja8XZHYSPEjEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\astung\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\astung\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

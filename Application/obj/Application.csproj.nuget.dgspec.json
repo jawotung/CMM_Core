@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\Application.csproj": {}
+    "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\Application.csproj": {
+    "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\Application.csproj",
+        "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\astung\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Application\\obj\\",
+        "outputPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -31,8 +31,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj"
+              "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj"
               }
             }
           }
@@ -97,14 +97,14 @@
         }
       }
     },
-    "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj": {
+    "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\astung\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\astung\\Documents\\My Docs\\Source Code\\exam\\CCM\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\astung\\Desktop\\CBS Project\\Converter\\CMM_Core\\CMM_Core\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
