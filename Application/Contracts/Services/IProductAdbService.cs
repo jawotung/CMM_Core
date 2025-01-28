@@ -11,7 +11,7 @@ namespace Application.Contracts.Services
 {
     public interface IProductAdbService
     {
-        Task<PaginatedList<ProductAdbDTO>> GetProductAdbList(int Page = 1, string Search = "");
+        Task<PaginatedList<ProductAdbDTO>> GetProductAdbList(int ProductId, int Page = 1, string Search = "");
         Task<List<ProductAdbDTO>> GetProductAdbList();
         Task<ReturnStatus> SaveProductAdb(ProductAdbDTO productAdb);
         Task<ReturnStatus> DeleteProductAdb(int id);

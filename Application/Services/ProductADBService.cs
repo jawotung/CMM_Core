@@ -3,11 +3,6 @@ using Application.Models.DTOs.Product;
 using Application.Models.Helpers;
 using Application.Models.Responses;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebAPI;
 
 namespace Application.Services
@@ -21,9 +16,9 @@ namespace Application.Services
             _repo = repo;
             _mapper = mapper;
         }
-        public async Task<PaginatedList<ProductAdbDTO>> GetProductAdbList(int Page = 1, string Search = "")
+        public async Task<PaginatedList<ProductAdbDTO>> GetProductAdbList(int ProductId, int Page = 1, string Search = "")
         {
-            PaginatedList<CmmProductAdb, ProductAdbDTO> data = await _repo.GetProductAdbList(Page, Search);
+            PaginatedList<CmmProductAdb, ProductAdbDTO> data = await _repo.GetProductAdbList(ProductId, Page, Search);
             return new PaginatedList<ProductAdbDTO>(data.Data, data.PageIndex, data.TotalPages, data.CountData);
         }
         public async Task<List<ProductAdbDTO>> GetProductAdbList()

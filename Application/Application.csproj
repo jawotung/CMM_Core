@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\Struct\**" />
+    <EmbeddedResource Remove="Models\Struct\**" />
+    <None Remove="Models\Struct\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="Contracts\Repositories\IAuthRepository.cs" />
     <Compile Remove="Contracts\Repositories\IBaseRepository.cs" />
     <Compile Remove="Contracts\Services\IAuthService.cs" />
@@ -26,6 +32,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\DTOs\Report\" />
   </ItemGroup>
 
 </Project>

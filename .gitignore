@@ -98,3 +98,7 @@ WebAPI/obj/WebAPI.csproj.nuget.dgspec.json
 /Domain/obj
 /Infrastructure/obj
 /WebAPI/obj
+/Application/bin
+/Infrastructure/bin
+/WebAPI/bin
+/Domain/bin

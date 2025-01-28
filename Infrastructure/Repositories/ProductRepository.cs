@@ -1,5 +1,4 @@
 ﻿using Application.Contracts.Repositories;
-using Application.Models.DTOs.Area;
 using Application.Models.DTOs.Product;
 using Application.Models.Helpers;
 using Application.Models.Responses;
@@ -34,6 +33,10 @@ namespace Infrastructure.Repositories
         public async Task<CmmProduct> GetProduct(string ProductCode)
         {
             return await _context.CmmProducts.Where(x => x.ProductCode == ProductCode).FirstOrDefaultAsync() ?? new();
+        }
+        public async Task<CmmProduct> GetProductByProductName(string ProductName)
+        {
+            return await _context.CmmProducts.Where(x => x.ProductName == ProductName).FirstOrDefaultAsync() ?? new();
         }
         public async Task<CmmProduct> GetProduct(int ProductId)
         {

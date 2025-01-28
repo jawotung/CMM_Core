@@ -233,8 +233,9 @@ public partial class CMMDBContext : DbContext
         modelBuilder.Entity<CmmArea>(entity =>
         {
             entity
-                .HasNoKey()
                 .ToTable("CMM_Area");
+
+            entity.HasKey(e => e.AreaId);
 
             entity.Property(e => e.AreaCode)
                 .HasMaxLength(5)

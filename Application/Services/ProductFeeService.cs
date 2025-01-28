@@ -1,18 +1,14 @@
 ﻿using Application.Contracts.Repositories;
+using Application.Contracts.Services;
 using Application.Models.DTOs.Product;
 using Application.Models.Helpers;
 using Application.Models.Responses;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebAPI;
 
 namespace Application.Services
 {
-    public class ProductFeeService
+    public class ProductFeeService : IProductFeeService
     {
         private readonly IProductFeeRepository _repo;
         private readonly IMapper _mapper;
@@ -21,9 +17,9 @@ namespace Application.Services
             _repo = repo;
             _mapper = mapper;
         }
-        public async Task<PaginatedList<ProductFeeDTO>> GetProductFeeList(int Page = 1, string Search = "")
+        public async Task<PaginatedList<ProductFeeDTO>> GetProductFeeList(int ProductAdbId, int Page = 1, string Search = "")
         {
-            PaginatedList<CmmProductFee, ProductFeeDTO> data = await _repo.GetProductFeeList(Page, Search);
+            PaginatedList<CmmProductFee, ProductFeeDTO> data = await _repo.GetProductFeeList(ProductAdbId, Page, Search);
             return new PaginatedList<ProductFeeDTO>(data.Data, data.PageIndex, data.TotalPages, data.CountData);
         }
         public async Task<List<ProductFeeDTO>> GetProductFeeList()
@@ -37,7 +33,7 @@ namespace Application.Services
             try
             {
                 CmmProductFee data = _mapper.Map<CmmProductFee>(productFee);
-                if (await ProductFeeNameExists(data.ProductAdbId, data.FeeId, data.FeeName))
+                if (await ProductFeeNameExists(data.ProductAdbId, data.TierId, data.FeeId, data.FeeName))
                 {
                     result.Message = "ADB Name already existing";
                     return result;
@@ -81,9 +77,9 @@ namespace Application.Services
             }
             return result;
         }
-        private async Task<bool> ProductFeeNameExists(int ProductAdbId, int FeeId, string FeeName)
+        private async Task<bool> ProductFeeNameExists(int ProductAdbId, int TierId, int FeeId, string FeeName)
         {
-            var data = await _repo.GetProductFee(ProductAdbId, FeeName);
+            var data = await _repo.GetProductFee(ProductAdbId, TierId, FeeName);
             return data != null && (FeeId != 0 ? (data.FeeId != FeeId && data.FeeName == FeeName) : data.FeeName == FeeName);
         }
     }

@@ -89,7 +89,7 @@ namespace Application.Services
         }
         private async Task<bool> ProductNameExists(int ProductId, string ProductName)
         {
-            var data = await _repo.GetProduct(ProductName);
+            var data = await _repo.GetProductByProductName(ProductName);
             return data != null && (ProductId != 0 ? (data.ProductId != ProductId && data.ProductName == ProductName) : data.ProductName == ProductName);
         }
     } 

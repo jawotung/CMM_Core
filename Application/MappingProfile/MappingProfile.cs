@@ -16,9 +16,11 @@ namespace Application.MappingProfile
         {
             CreateMap<AreaDTO, CmmArea>();
             CreateMap<CmmArea, AreaDTO>();
+            CreateMap<CmmArea, CmmArea>();
 
             CreateMap<ProductDTO, CmmProduct>();
             CreateMap<CmmProduct, ProductDTO>();
+            CreateMap<CmmProduct, CmmProduct>();
         }
     }
 }

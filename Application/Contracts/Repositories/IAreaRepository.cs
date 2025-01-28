@@ -1,11 +1,6 @@
 ﻿using Application.Models.DTOs.Area;
 using Application.Models.Helpers;
 using Application.Models.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebAPI;
 
 namespace Application.Contracts.Repositories

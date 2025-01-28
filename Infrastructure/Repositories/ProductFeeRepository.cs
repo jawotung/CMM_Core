@@ -1,5 +1,4 @@
 ﻿using Application.Contracts.Repositories;
-using Application.Models.DTOs.Area;
 using Application.Models.DTOs.Product;
 using Application.Models.Helpers;
 using Application.Models.Responses;
@@ -18,9 +17,10 @@ namespace Infrastructure.Repositories
             _context = context;
             _mapper = mapper;
         }
-        public async Task<PaginatedList<CmmProductFee, ProductFeeDTO>> GetProductFeeList(int page = 1, string search = "")
+        public async Task<PaginatedList<CmmProductFee, ProductFeeDTO>> GetProductFeeList(int ProductAdbId, int page = 1, string search = "")
         {
             IQueryable<CmmProductFee> list = _context.CmmProductFees
+                                        .Where(x => x.ProductAdbId == ProductAdbId)
                                         .Where(x => string.IsNullOrEmpty(search) ||
                                                     x.FeeName.Contains(search) ||
                                                     x.FeeAmount.Contains(search))
@@ -31,9 +31,9 @@ namespace Infrastructure.Repositories
         {
             return await _context.CmmProductFees.ToListAsync();
         }
-        public async Task<CmmProductFee> GetProductFee(int ProductAdbId, string FeeName)
+        public async Task<CmmProductFee> GetProductFee(int ProductAdbId,int TierId, string FeeName)
         {
-            return await _context.CmmProductFees.Where(x => x.FeeName == FeeName && x.ProductAdbId == ProductAdbId).FirstOrDefaultAsync() ?? new();
+            return await _context.CmmProductFees.Where(x => x.FeeName == FeeName && x.ProductAdbId == ProductAdbId && x.TierId == TierId).FirstOrDefaultAsync() ?? new();
         }
         public async Task<CmmProductFee> GetProductFee(int FeeId)
         {

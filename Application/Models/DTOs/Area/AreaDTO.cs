@@ -19,11 +19,11 @@ public class AreaDTO
     [Required(ErrorMessage = "IsActive status is required.")]
     public bool? IsActive { get; set; }
 
-    public DateOnly? DateCreated { get; set; }
+    public DateTime DateCreated { get; set; }
 
     public string? CreatedBy { get; set; }
 
-    public DateOnly? DeactivateDate { get; set; }
+    public DateTime DeactivateDate { get; set; }
 
     public string? DeactivateBy { get; set; }
 }

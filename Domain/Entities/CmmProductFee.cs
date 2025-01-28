@@ -7,7 +7,7 @@ public partial class CmmProductFee
 {
     public int ProductAdbId { get; set; }
 
-    public int? TierId { get; set; }
+    public int TierId { get; set; } = 0;
 
     public int FeeId { get; set; }
 

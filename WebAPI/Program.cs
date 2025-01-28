@@ -2,6 +2,7 @@ using Application.MappingProfile;
 using Microsoft.OpenApi.Models;
 using Infrastructure.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using WebAPI;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -42,8 +43,8 @@ builder.Services.AddSwaggerGen(swagger => {
 });
 
 // Register DbContext with dependency injection
-//builder.Services.AddDbContext<CMMDBContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("CMMDBContext")));
+builder.Services.AddDbContext<CMMDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("CMMDBContext")));
 
 // Register DbContext with dependency injection
 //builder.Services.AddDbContext<FinacleDBContext>(options =>

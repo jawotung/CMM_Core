@@ -18,9 +18,10 @@ namespace Infrastructure.Repositories
             _context = context;
             _mapper = mapper;
         }
-        public async Task<PaginatedList<CmmProductAdb, ProductAdbDTO>> GetProductAdbList(int page = 1, string search = "")
+        public async Task<PaginatedList<CmmProductAdb, ProductAdbDTO>> GetProductAdbList(int ProductId, int page = 1, string search = "")
         {
             IQueryable<CmmProductAdb> list = _context.CmmProductAdbs
+                                        .Where(x => x.ProductId == ProductId)
                                         .Where(x => string.IsNullOrEmpty(search) ||
                                                     x.AdbName.Contains(search) ||
                                                     x.AdbAmount.Contains(search))

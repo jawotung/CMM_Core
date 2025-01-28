@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Application.Models.Responses
@@ -35,5 +36,12 @@ namespace Application.Models.Responses
     public class ReturnStatusList<T>(List<T> data) : ReturnStatus
     {
         public List<T> Data { get; set; } = data;
+    }
+    public class ReturnDownload
+    {
+        [JsonPropertyName("DataBase64")]
+        public string DataBase64 { get; set; } = "";
+        [JsonPropertyName("fileName")]
+        public string FileName { get; set; } = "";
     }
 }

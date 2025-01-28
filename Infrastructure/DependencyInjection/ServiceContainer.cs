@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Application.Contracts.Repositories;
+using Application.Contracts.Services;
+using Application.Services;
+using Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -51,10 +55,15 @@ namespace Infrastructure.DependencyInjection
             services.AddHttpContextAccessor();
             //services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
             //services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
-            //services.AddScoped<IAuthRepository, AuthRepository>();
+            services.AddScoped<IAreaService, AreaService>();
+            services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IProductFeeService, ProductFeeService>();
+            services.AddScoped<IProductTierService, ProductTierService>();
 
-
-            //services.AddScoped<IAuthService, AuthService>();
+            services.AddTransient<IAreaRepository, AreaRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IProductFeeRepository, ProductFeeRepository>();
+            services.AddTransient<IProductTierRepository, ProductTierRepository>();
 
             services.AddHttpContextAccessor();
 

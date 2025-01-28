@@ -1,11 +1,6 @@
 ﻿using Application.Models.DTOs.Product;
 using Application.Models.Helpers;
 using Application.Models.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WebAPI;
 
 namespace Application.Contracts.Repositories
@@ -16,6 +11,7 @@ namespace Application.Contracts.Repositories
         Task<List<CmmProduct>> GetProductList();
         Task<CmmProduct> GetProduct(string ProductCode);
         Task<CmmProduct> GetProduct(int ProductID);
+        Task<CmmProduct> GetProductByProductName(string ProductName);
         Task<ReturnStatus> Update(CmmProduct Product);
         Task<ReturnStatus> Add(CmmProduct Product);
         Task<ReturnStatus> Delete(int ProductID);

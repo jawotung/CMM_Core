@@ -7,7 +7,7 @@ namespace Application.Contracts.Repositories
 {
     public interface IProductAdbRepository
     {
-        Task<PaginatedList<CmmProductAdb, ProductAdbDTO>> GetProductAdbList(int page = 1, string search = "");
+        Task<PaginatedList<CmmProductAdb, ProductAdbDTO>> GetProductAdbList(int ProductId, int page = 1, string search = "");
         Task<List<CmmProductAdb>> GetProductAdbList();
         Task<CmmProductAdb> GetProductAdb(int ProductId,string AdbName);
         Task<CmmProductAdb> GetProductAdb(int ProductAdbId);

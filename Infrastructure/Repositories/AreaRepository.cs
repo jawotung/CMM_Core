@@ -51,7 +51,7 @@ namespace Infrastructure.Repositories
                 }
 
                 _mapper.Map(area, existing);
-                existing.DateCreated = DateOnly.FromDateTime(DateTime.Now);
+                existing.DateCreated = DateTime.Now;
                 _context.Entry(existing).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
                 result.Success = true;
